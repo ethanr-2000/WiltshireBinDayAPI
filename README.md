@@ -1,6 +1,6 @@
 # [WiltshireBinDayAPI](https://github.com/ethanr-2000/WiltshireBinDayAPI)
 
-<h4 align="center">Provides a Typescript abstraction to the Wiltshire Council Bin Day Website</h4>
+Provides a Typescript abstraction to the Wiltshire Council Bin Day Website
 
 [![npm version](https://badge.fury.io/js/wiltshire-bin-day-api.svg)](https://badge.fury.io/js/wiltshire-bin-day-api)
 
@@ -8,7 +8,7 @@
 
 `npm install wiltshire-bin-day-api`
 
-##Basic Implementation
+## Basic Implementation
 The main function in this repo is the `getBinDays` function, which returns a list of bin day information for the current month for the given address.
 ```
 const { getBinDays } = require('wiltshire-bin-day-api')
@@ -39,11 +39,11 @@ The function defaults to the current month/year. If you'd like bin data for anot
 
 `const binDays = await getBinDays(<POSTCODE>, <HOUSE NAME/NUMBER>, <UPRN>, <MONTH>, <YEAR>)`
 
-##Lower-Level Implementation
+## Lower-Level Implementation
 
 The api-level functions are also exposed and used as shown below.
 
-####AddressList
+#### AddressList
 Get list of details for all available house names/numbers in the given postcode. 
 ```
 const { addressList } = require('wiltshire-bin-day-api')
@@ -51,7 +51,7 @@ const { addressList } = require('wiltshire-bin-day-api')
 const addresses = await addressList(<POSTCODE>, <MONTH>, <YEAR>)
 ```
 
-####Calendar
+#### Calendar
 Get HTML string of calendar with bin day details embedded
 ```
 const { calendar } = require('wiltshire-bin-day-api')
@@ -60,7 +60,10 @@ const binCalendarHtml = await calendar(<POSTCODE>, <UPRN>, <MONTH>, <YEAR>)
 ```
 
 Can be automatically parsed with `binDayHtmlParser` to get `binDay` objects
-`const binDays = binDayHTMLParser(binCalendarHtml)`
+```
+const binDays = binDayHTMLParser(binCalendarHtml)
+```
+
 
 
 
